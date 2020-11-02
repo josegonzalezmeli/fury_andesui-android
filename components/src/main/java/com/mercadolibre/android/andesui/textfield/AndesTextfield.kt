@@ -529,6 +529,16 @@ class AndesTextfield : ConstraintLayout {
         textComponent.requestFocus()
     }
 
+    /**.___
+     * Register a callback to be invoked when focus of this view changed.
+     *
+     * @param listener The callback that will run.
+     __.*/
+    override fun setOnFocusChangeListener(listener: OnFocusChangeListener?) {
+        super.setOnFocusChangeListener(listener)
+        textComponent.onFocusChangeListener = listener
+    }
+
     private fun createConfig() = AndesTextfieldConfigurationFactory.create(context, andesTextfieldAttrs)
 
     /**
@@ -545,4 +555,5 @@ class AndesTextfield : ConstraintLayout {
         private val RIGHT_COMPONENT_DEFAULT = null
         private val INPUT_TYPE_DEFAULT = InputType.TYPE_CLASS_TEXT
     }
+
 }
