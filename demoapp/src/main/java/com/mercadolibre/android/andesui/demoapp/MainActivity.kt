@@ -5,6 +5,7 @@ import android.content.Intent.ACTION_VIEW
 import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
 import kotlinx.android.synthetic.main.andesui_demoapp_main.*
 
@@ -31,6 +32,16 @@ class MainActivity : AppCompatActivity() {
         setupWhatsNew()
         setupContributionTrigger()
         setupAndesSpecsWeb()
+
+        setupTest()
+    }
+
+    private fun setupTest() {
+        listener_test.setOnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                Log.e("Test listener", "Testing listener")
+            }
+        }
     }
 
     private fun setupCheckbox() {
