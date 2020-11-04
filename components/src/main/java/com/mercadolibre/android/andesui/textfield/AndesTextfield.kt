@@ -555,5 +555,4 @@ class AndesTextfield : ConstraintLayout {
         private val RIGHT_COMPONENT_DEFAULT = null
         private val INPUT_TYPE_DEFAULT = InputType.TYPE_CLASS_TEXT
     }
-
 }
