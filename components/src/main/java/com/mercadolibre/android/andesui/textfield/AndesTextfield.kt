@@ -149,6 +149,15 @@ class AndesTextfield : ConstraintLayout {
             setupTextWatcher()
         }
 
+    /**
+     * Getter and setter for the textComponent onFocusChangeListener.
+     */
+    var textComponentFocusChangedListener: OnFocusChangeListener?
+        get() = textComponent.onFocusChangeListener
+        set(value) {
+            textComponent.onFocusChangeListener = value
+        }
+
     private lateinit var andesTextfieldAttrs: AndesTextfieldAttrs
     private lateinit var textfieldContainer: ConstraintLayout
     private lateinit var textContainer: ConstraintLayout
@@ -536,7 +545,7 @@ class AndesTextfield : ConstraintLayout {
      __.*/
     override fun setOnFocusChangeListener(listener: OnFocusChangeListener?) {
         super.setOnFocusChangeListener(listener)
-        textComponent.onFocusChangeListener = listener
+        textComponentFocusChangedListener = listener
     }
 
     private fun createConfig() = AndesTextfieldConfigurationFactory.create(context, andesTextfieldAttrs)
