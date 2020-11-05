@@ -73,6 +73,18 @@ class AndesTextfieldTest {
     }
 
     @Test
+    fun `textfield with textComponentFocusChangedListener`() {
+        val focusListener = View.OnFocusChangeListener { _, _ -> }
+        textfield.onFocusChangeListener = focusListener
+        assertNotNull(textfield.textComponentFocusChangedListener)
+    }
+
+    @Test
+    fun `textfield without textComponentFocusChangedListener`() {
+        assertNull(textfield.textComponentFocusChangedListener)
+    }
+
+    @Test
     fun `set action`() {
         textfield.setAction("action", View.OnClickListener { })
         assertEquals(textfield.rightContent, AndesTextfieldRightContent.ACTION)
